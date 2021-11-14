@@ -32,7 +32,8 @@ class Carrito{
         this.importeServicio = importeServicio;
     }
     sumar (a , b) {
-        this.importeTotal = a + b; 
+        this.importeTotal = a + b;
+        importeCarrito.value = this.importeTotal;
     }
 }
 
@@ -61,6 +62,16 @@ function traerServicio(id){
     }
 }
 
+function agregarServicioAlDOM (listServicios) {
+    let listaDOM = document.getElementById("listaServicios");
+    for (const servicio of listServicios) {
+        let elemento = document.createElement("li");
+        elemento.innerHTML = servicio.servicio;
+        listaDOM.appendChild(elemento)
+    }
+    let importeCarrito = document.getElementById("importeCarrito");
+}
+
 //Main
 //variables de sesion
 
@@ -83,7 +94,7 @@ const carrito = new Carrito (0,0,0); //inicializamos un carrito de cero
 
 
 //Creamos el usuario con sus datos y mostramos mensaje de bienvenida
-solicitarDatosUsuario();
+//solicitarDatosUsuario();
 
 //el usuario solicita un servicio
 var servicio = prompt ("Por favor ingrese el nombre del servicio que desea contratar o 'ESC' para salir ");
@@ -148,17 +159,23 @@ while (servicio != "ESC"){
 }
 
 console.log("Carrito final: Importe: $ " + carrito.importeTotal + " Servicios contratados: " + listServicios.length );
+agregarServicioAlDOM(listServicios);
 
 
-function comparar ( a, b ){ return a - b; }
+
+
+
+//Comentamos esta parte ya que son de otras entregas
+//function comparar ( a, b ){ return a - b; }
 
 //Funcion para ordenar el carrito, va del producto mas barato al mas caro
-var serviciosImportes =[];
-for (const servicio of listServicios) {
-    serviciosImportes.push(servicio.precio);
-    console.log(servicio.precio);
-}
-console.log(serviciosImportes);
-console.log("carrito ordenado");
-console.log(serviciosImportes.sort(comparar));
+//var serviciosImportes =[];
+//for (const servicio of listServicios) {
+//    serviciosImportes.push(servicio.precio);
+//    console.log(servicio.precio);
+//}
+
+//console.log(serviciosImportes);
+//console.log("carrito ordenado");
+//console.log(serviciosImportes.sort(comparar));
 
