@@ -43,13 +43,13 @@ function solicitarDatosUsuario (){
     let user = prompt ("Ingresar Usuario: ");
     let passUser = prompt ("Ingresar Contraseña: ");
     const usuario1 = new Usuario (nomUser, user, passUser);
-    usuario1.saludar();
+    //usuario1.saludar(); #Sacamos el saludo ya que se va a mostrar en pantalla
     
     //Guardar el usuario en la session
     sessionStorage.setItem("nombreUsuario", nomUser);
     sessionStorage.setItem("usuario", user);  
-    alert(sessionStorage.getItem(nombreUsuario));
-    alert(sessionStorage.getItem(usuario));
+    //alert(sessionStorage.getItem(nombreUsuario));
+    //alert(sessionStorage.getItem(usuario));
 }
 
 function traerServicio(id){
@@ -69,10 +69,16 @@ function agregarServicioAlDOM (listServicios) {
         elemento.innerHTML = servicio.servicio;
         listaDOM.appendChild(elemento)
     }
-    let importeCarrito = document.getElementById("importeCarrito");
 }
 
-//Main
+function agregarAlDom(dato, element, padre){
+    let padre1 = document.getElementById(padre);
+    let element1 = document.createElement(element);
+    element1.innerHTML= dato
+    padre1.appendChild(element1);
+}
+
+
 //variables de sesion
 
 const servicios = [
@@ -92,10 +98,11 @@ const listServicios= [];
 const carrito = new Carrito (0,0,0); //inicializamos un carrito de cero
 
 
+//MAIN
 
 //Creamos el usuario con sus datos y mostramos mensaje de bienvenida
-//solicitarDatosUsuario();
-
+solicitarDatosUsuario();
+agregarAlDom("Bienvenido " + sessionStorage.getItem("usuario"), "spam","user")
 //el usuario solicita un servicio
 var servicio = prompt ("Por favor ingrese el nombre del servicio que desea contratar o 'ESC' para salir ");
 
