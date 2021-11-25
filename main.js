@@ -1,5 +1,5 @@
 //Clase usuario con su constructor y metodos
-class Usuario{
+/*class Usuario{
     constructor(nombre, usuario, contraseña){
         this.nombre = nombre;
         this.usuario = usuario;
@@ -9,9 +9,9 @@ class Usuario{
     saludar (){
         alert ("Bienvenido " + this.nombre + " ( usuario: " + this.usuario + " ) ");
     }
-}
+}*/
 //Clase de servicio con su constructor y metodos
-class Servicio{
+/*class Servicio{
     constructor (id,tipo, importe){
         this.id = id;
         this.tipo = tipo;
@@ -23,7 +23,7 @@ class Servicio{
         this.tipo= tipo;
         this.importe = importe
     }
-}
+}*/
 
 //Clase carrito con su constructor y sus metodos
 class Carrito{
@@ -33,12 +33,12 @@ class Carrito{
     }
     sumar (a , b) {
         this.importeTotal = a + b;
-        importeCarrito.value = this.importeTotal;
+        //importeCarrito.value = this.importeTotal;
     }
 }
 
 //Funciones
-function solicitarDatosUsuario (){
+/*function solicitarDatosUsuario (){
     let nomUser = prompt("Ingresar nombre: ");
     let user = prompt ("Ingresar Usuario: ");
     let passUser = prompt ("Ingresar Contraseña: ");
@@ -50,33 +50,32 @@ function solicitarDatosUsuario (){
     sessionStorage.setItem("usuario", user);  
     //alert(sessionStorage.getItem(nombreUsuario));
     //alert(sessionStorage.getItem(usuario));
-}
+}*/
 
 function traerServicio(id){
     for (const servicio of servicios) {
         if (servicio.id == id ) {
             const servicio = servicios[id];
-            //const servicio = new Servicio (this.id, this.servicio, this.precio)
             return servicio;            
         }
     }
 }
 
-function agregarServicioAlDOM (listServicios) {
+/*function agregarServicioAlDOM (listServicios) {
     let listaDOM = document.getElementById("listaServicios");
     for (const servicio of listServicios) {
         let elemento = document.createElement("li");
         elemento.innerHTML = servicio.servicio;
         listaDOM.appendChild(elemento)
     }
-}
+}*/
 
-function agregarAlDom(dato, element, padre){
+/*function agregarAlDom(dato, element, padre){
     let padre1 = document.getElementById(padre);
     let element1 = document.createElement(element);
     element1.innerHTML= dato
     padre1.appendChild(element1);
-}
+}*/
 
 
 //variables de sesion
@@ -101,18 +100,22 @@ const carrito = new Carrito (0,0,0); //inicializamos un carrito de cero
 //MAIN
 
 //Creamos el usuario con sus datos y mostramos mensaje de bienvenida
-solicitarDatosUsuario();
-agregarAlDom("Bienvenido " + sessionStorage.getItem("usuario"), "spam","user")
+//solicitarDatosUsuario();
+//agregarAlDom("Bienvenido " + sessionStorage.getItem("usuario"), "spam","user")
 //el usuario solicita un servicio
-var servicio = prompt ("Por favor ingrese el nombre del servicio que desea contratar o 'ESC' para salir ");
 
-while (servicio != "ESC"){
+let boton = document.getElementById("btonElectricidad");
+boton.addEventListener("click",sumarAlCarrito);
+
+function sumarAlCarrito(){
+    servicio = boton.value;
     servicio= servicio.toUpperCase();
     switch (servicio) {
         case "ELECTRICIDAD" :
             servicioContratado = traerServicio(0);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal )
             break;
         case "PLOMERIA" :
             servicioContratado = traerServicio(1);
@@ -161,15 +164,11 @@ while (servicio != "ESC"){
             break;
         default:
             alert("El servicio ingresado no esta disponible en estos momentos");
-    }
-    servicio = prompt ("Por favor ingrese el nombre del servicio que desea contratar o 'ESC' para salir ");
+    } 
 }
 
 console.log("Carrito final: Importe: $ " + carrito.importeTotal + " Servicios contratados: " + listServicios.length );
-agregarServicioAlDOM(listServicios);
-
-
-
+//agregarServicioAlDOM(listServicios);
 
 
 //Comentamos esta parte ya que son de otras entregas

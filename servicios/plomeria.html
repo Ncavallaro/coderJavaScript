@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicio de plomeria para tu hogar">
+    <title>Servicio de plomeria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--logo-->
+        <a href="../index.html">
+            <img src="../images/logotipo.png" width="150px" height="150px">
+        </a>
+        <!--menu-->
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="../index.html">Home</a> 
+                </li>
+                <li>
+                    <a href="../servicios.html">Servicios</a>
+                </li>
+                <li>
+                    <a href="../nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="../nuestrosProfecionales.html">Nuestros Profecionales</a>
+                </li>
+                <li>
+                    <a href="../sumate.html">Sumate</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Contenedor Pricipal -->
+    <div class="container-fluid">
+        <!--Seccion de categorias principales-->
+        <div class="row">
+            <section class="categoriasPedido">
+                <article>
+                    <h2>Plomeria</h2>
+                    <img src="../images/plomeria.png" width="125px" height="125px">
+                </article>
+            </section>
+        </div>
+
+        <div class="center">
+            <div class="subtitulo">
+                <h2>Solicita el servicio para tu hogar enviandonos un mail o a través de nuestro WhatsApp</h2> <a href="https://api.whatsapp.com/send?phone=541124069904" style="clear: left; float: left; margin-bottom: 1em;" target="_blank"><img border="0" data-original-height="59" data-original-width="59" src="https://1.bp.blogspot.com/-q3Dot9N2qac/XOQgr9etVpI/AAAAAAABT1M/6V4Bqaqr-6UQcl9Fy2_CaVgex0N_OYuQgCLcBGAs/s1600/whatsapp%2Bicono.png" style="width: 47px; height: 47px;"/></a>
+            </div>
+            <!--formulario contacto-->
+            <form class="formContacto">
+                <div class="row">
+                  <div class="col">
+                      <div class="flex">
+                        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Ingresa tu nombre" id="nombre">
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="flex">
+                        <label for="apellido" class="col-sm-2 col-form-label">Apellido </label>
+                        <input type="text" class="form-control" placeholder="Ingresa tu Apellido" id="apellido">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="flex">
+                          <label for="telefono" class="col-sm-2 col-form-label">Telefono </label>
+                          <input type="number" class="form-control" placeholder="Ingresa tu Teléfono">
+                        </div>
+                    </div>
+                    <div class="col">
+                      <div class="flex">
+                          <label for="email" class="col-sm-2 col-form-label">Mail </label>
+                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="flex">
+                            <label for="comentarios" class="col-sm-2 col-form-label">Comentarios </label>
+                            <textarea class="form-control" id="comentarios" style="height: 100px"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+    
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="reset" class="btn btn-danger">Borrar</button>
+            
+            </form>
+        </div>
+        
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+        <div class="footer__logoFooter">
+            <h3>Home service S.A.</h3>
+        </div>  
+        <div class="footer__redes">
+            <h5>SEGUINOS EN NUESTRAS REDES</h5>
+            <ul>
+                <li><img src="../images/iconosRedes/facebook.png" ></li>
+                <li><img src="../images/iconosRedes/gorjeo.png" ></li>
+                <li><img src="../images/iconosRedes/instagram.png" ></li>
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=541124069904">
+                    <img src="../images/iconosRedes/whatsapp.png" >
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

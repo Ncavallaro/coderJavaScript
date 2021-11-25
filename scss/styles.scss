@@ -1,0 +1,355 @@
+/*
+Colores a utilizar
+- Negro: 0A0300 
+- Azul: 003443
+- Marron: A79E81
+- Celeste: 99BFC8
+- Hueso: F1EDE2
+
+*/
+
+$colorNegro: #0A0300;
+$colorAzul: #003443;
+$colorMarron: #A79E81;
+$colorCeleste: #99BFC8;
+$colorHueso: #F1EDE2;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* HEADER*/
+header{
+    background-color: $colorHueso;
+    display: -webkit-flex;
+}
+
+/* NAVEGACION*/
+nav{
+    padding-left: 10px;
+    padding-top: 50px;
+    width: 92%;
+}
+
+.menu{
+	background: $colorMarron;
+    text-align: right;
+    list-style: none;
+	margin: 0px;
+	padding:0px;
+    background-image: linear-gradient(to left, $colorMarron, $colorHueso );
+
+    li{
+        display: inline-block;
+        position:relative;
+
+        a {
+            padding: 10px 20px;
+            display: inline-block;
+            color: #fff;
+        }
+        a:hover{
+            background: #beb79e;
+        }
+    }
+
+    ul{
+        list-style: none;
+        font-size:0;
+    }
+}
+
+ul ul {
+    background: $colorMarron;
+    position: absolute;
+    display: none;
+
+    li {
+        display: block;
+        }
+}
+
+ul li:hover ul {
+    display:block;
+}
+
+/* BODY*/
+body{
+    background-color: $colorHueso;
+    color: $colorNegro;
+    font-size: 16px;
+}
+
+h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+a{
+    color: $colorHueso;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#grilla{
+    grid-template-areas: 
+    "header header header"
+    "titulo titulo titulo"
+    "categorias categorias categorias"
+    "novedades novedades novedades"
+    "footer footer footer";
+    grid-template-rows: 170px 30px auto auto 75px;
+
+}
+
+header{
+    grid-area: header;
+}
+div#titulo{
+    grid-area: titulo;
+}
+section#categorias{
+    grid-area: categorias;
+}
+section#novedades{
+    grid-area: novedades;
+}
+footer{
+    grid-area: footer;
+}
+
+.rectanguloColor{
+    width: 100%;
+    height: 100%;
+    background-color: $colorAzul;
+    color: $colorMarron;
+
+    h2{
+        text-align: center;
+        font-size: 30px;
+        padding-top: 35px;
+    }
+    h3{
+        text-align: center;
+    }
+}
+
+/* CATEGORIAS*/
+.titulo {
+    text-align: center;
+}
+.categorias{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin-top: 20px;
+
+     h1{
+        text-align: center;
+    }
+
+    article{
+        display: inline-block;
+        text-align: center;
+        flex-basis: 300px;
+        margin: 10px;
+        /* transition: all 1s;  */
+    }
+
+    article:hover{
+        transform: scale(1.25);
+    }
+}
+
+.subtitulo{
+    display: inline-flex;
+
+    h2{
+        font-size: 35px;
+    }
+
+    a{
+        padding-left: 20px;
+    }
+}
+// Pedidos
+.categoriasPedido{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    margin-top: 20px;
+
+    article{
+        display: inline-block;
+        text-align: center;
+        flex-basis: 300px;
+        margin: 10px;
+
+        h2{
+            font-size: 50px;
+        }
+    }
+}
+
+/*NOVEDADES*/
+.novedades{
+    text-align: center;
+    margin-top: 50px;
+
+    h2{
+        font-size: 25px;
+    }
+
+    article iframe{
+        padding: 5px;
+        width: 500px;
+        height: 300px;
+    }
+    article img{
+        padding: 5px;
+        width: 400px;
+        height: 300px;
+    }
+}
+
+/* Seccion Nosotros */
+
+.sobreNosotros{
+    width: 100%;
+    text-align: center;
+}
+
+.sobreNosotros__parrafo{
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+/* FOOTER*/
+.footer{
+    position: fixed;
+    // position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: $colorMarron;
+    color: $colorHueso;
+    padding: 10px 0 0 0 ;  
+}
+
+.footer__logoFooter{
+    text-align: left;
+}
+.footer h3{
+    padding: 30px 20px;
+    position: absolute;
+    font-size: 25px;
+}
+
+.footer__redes{
+    text-align: right;
+    padding-right: 7px;
+        
+    ul {
+        margin-bottom: 0px;
+
+        li{
+            display: inline-block;
+            position:relative;
+            
+            img{
+                margin: 10px 5px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    } 
+}
+
+/*Formularios*/
+.contactoPadre{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+.formContacto{
+    border: solid 2px $colorAzul;
+    padding: 15px;
+    // width: 80%;
+    margin-left: 60px;
+    margin-right: 60px;
+    .col{
+        margin: 5px;
+    }
+    button{
+        margin: 5px;
+    }
+    a{
+        width: 74px;
+        height: 40px;
+
+        img{
+            text-align: center;
+            height: 29px;
+        }
+    }
+    
+}
+
+tr td{
+    font-size: 20px;
+    a{
+        color: $colorAzul ;
+        font-size: 20px;
+    }
+}
+
+.rowForm{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.center{
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+.margin10px{
+    margin: 10px;
+}
+/* RESPONSIVE */
+@media screen and (max-width: 360px) {
+    *{
+        font-size: 13px;
+    }
+    .menu li a{
+        font-size: 17px;
+    }
+    nav{
+        padding-top: 5px;
+    }
+    .titulo h1{
+        font-size: 20px;
+    }
+    .novedades article iframe{
+        width: 300px;
+        height: 200px;
+        
+    }
+}
+
+@media screen and (max-width: 417px) {
+    .footer h3{
+        display: none;
+    }
+}
