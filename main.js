@@ -104,66 +104,71 @@ const carrito = new Carrito (0,0,0); //inicializamos un carrito de cero
 //agregarAlDom("Bienvenido " + sessionStorage.getItem("usuario"), "spam","user")
 //el usuario solicita un servicio
 
-let boton = document.getElementById("btonElectricidad");
-boton.addEventListener("click",sumarAlCarrito);
 
-function sumarAlCarrito(){
-    servicio = boton.value;
+function sumarAlCarrito(selection){
+    servicio = selection;
     servicio= servicio.toUpperCase();
     switch (servicio) {
         case "ELECTRICIDAD" :
             servicioContratado = traerServicio(0);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
-            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal )
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "PLOMERIA" :
             servicioContratado = traerServicio(1);
             listServicios.push(servicioContratado); 
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "CERRAJERIA" :
             servicioContratado = traerServicio(2);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "MUDANZA" :
             servicioContratado = traerServicio(3);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "SERVICIO DE LIMPIEZA" :
             servicioContratado = traerServicio(4);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "FUMIGACION" :
             servicioContratado = traerServicio(5);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "JARDINERIA" :
             servicioContratado = traerServicio(6);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "PILETERO" :
             servicioContratado = traerServicio(7);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "PINTOR" :
             servicioContratado = traerServicio(8);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
         case "TECHISTA" :
             servicioContratado = traerServicio(9);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
+            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
             break;
-        default:
-            alert("El servicio ingresado no esta disponible en estos momentos");
     } 
 }
 

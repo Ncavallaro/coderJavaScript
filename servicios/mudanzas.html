@@ -56,54 +56,7 @@
     </div>
 
     <div class="center">
-        <div class="subtitulo">
-            <h2>Solicita el servicio para tu hogar enviandonos un mail o a través de nuestro WhatsApp</h2> <a href="https://api.whatsapp.com/send?phone=541124069904" style="clear: left; float: left; margin-bottom: 1em;" target="_blank"><img border="0" data-original-height="59" data-original-width="59" src="https://1.bp.blogspot.com/-q3Dot9N2qac/XOQgr9etVpI/AAAAAAABT1M/6V4Bqaqr-6UQcl9Fy2_CaVgex0N_OYuQgCLcBGAs/s1600/whatsapp%2Bicono.png" style="width: 47px; height: 47px;"/></a>
-        </div>
-        <!--formulario contacto-->
-        <form class="formContacto">
-            <div class="row">
-              <div class="col">
-                  <div class="flex">
-                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
-                    <input type="text" class="form-control" placeholder="Ingresa tu nombre" id="nombre">
-                  </div>
-              </div>
-              <div class="col">
-                <div class="flex">
-                    <label for="apellido" class="col-sm-2 col-form-label">Apellido </label>
-                    <input type="text" class="form-control" placeholder="Ingresa tu Apellido" id="apellido">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="flex">
-                      <label for="telefono" class="col-sm-2 col-form-label">Telefono </label>
-                      <input type="number" class="form-control" placeholder="Ingresa tu Teléfono">
-                    </div>
-                </div>
-                <div class="col">
-                  <div class="flex">
-                      <label for="email" class="col-sm-2 col-form-label">Mail </label>
-                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                  </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="flex">
-                        <label for="comentarios" class="col-sm-2 col-form-label">Comentarios </label>
-                        <textarea class="form-control" id="comentarios" style="height: 100px"></textarea>
-                    </div>
-                </div>
-                <div class="col">
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <button type="reset" class="btn btn-danger">Borrar</button>
-            
-        </form>
+        <button id="btonMudanzas" class="btn btn-outline-dark" onclick="sumarAlCarrito('mudanzas')">agregar al carrito</button>
     </div>
     
 </div>
@@ -127,5 +80,7 @@
         </ul>
     </div>
 </footer>
+
+<script src="../main.js"></script>
 </body>
 </html>
