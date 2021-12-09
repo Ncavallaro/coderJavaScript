@@ -153,12 +153,20 @@ footer{
         text-align: center;
     }
 
+    h3{
+        font-size: 25px;
+    }
+
     article{
         display: inline-block;
         text-align: center;
         flex-basis: 300px;
-        margin: 10px;
+        margin: 20px;
         /* transition: all 1s;  */
+
+        img{
+            margin: 10px;
+        }
     }
 
     article:hover{

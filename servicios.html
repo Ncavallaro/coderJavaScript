@@ -14,109 +14,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!--header-->
-    <header>
-        <!--logo-->
-        <a href="index.html">
-            <img src="images/logotipo.png" width="150px" height="150px">
-        </a>
-        <!--menu-->
-        <nav>
-            <ul class="menu">
-                <li>
-                    <a href="index.html">Home</a> 
-                </li>
-                <li>
-                    <a href="servicios.html">Servicios</a>
-                </li>
-                <li>
-                    <a href="nosotros.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="nuestrosProfecionales.html">Nuestros Profecionales</a>
-                </li>
-                <li>
-                    <a href="sumate.html">Sumate</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+        <!--header-->
+        <header>
+            <!--logo-->
+            <a href="index.html">
+                <img src="images/logotipo.png" width="150px" height="150px">
+            </a>
+            <!--menu-->
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">Home</a> 
+                    </li>
+                    <li>
+                        <a href="servicios.html">Servicios</a>
+                    </li>
+                    <li>
+                        <a href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="nuestrosProfecionales.html">Nuestros Profecionales</a>
+                    </li>
+                    <li>
+                        <a href="carrito.html">Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-        <!--
-                Electricidad
-                Plomeria
-                Cerrajeria
-                Mudanzas
-                Servicios de limpieza
-                Fumigación
-                Jardineria
-                Piletero
-                Pintor
-                Techistas
-        -->
     <div class="container-fluid">
         <div class="row">
-            <section class="categorias">
-                <article>
-                    <a href="servicios/electricidad.html">
-                        <img src="images/electrico.png" width="125px" height="125px">
-                    </a>
-                    <h3>Electricidad</h3>
-                </article>
-                <article>
-                    <a href="servicios/ServicioLimpieza.html">
-                        <img src="images/limpiezaCasa.png" width="125px" height="125px">
-                    </a>
-                    <h3>Limpieza</h3>
-                </article>
-                <article>
-                    <a href="servicios/jardineria.html">
-                        <img src="images/jardineria.png" width="125px" height="125px">
-                    </a>
-                    <h3>Jardineria</h3>
-                </article>
-                <article>
-                    <a href="servicios/plomeria.html">
-                        <img src="images/plomeria.png" width="125px" height="125px">
-                    </a>
-                    <h3>Plomeria</h3>
-                </article>
-                <article>
-                    <a href="servicios/cerrajeria.html">
-                        <img src="images/llaves.png" width="125px" height="125px">
-                    </a>
-                    <h3>Cerrajeria</h3>
-                </article>
-                <article>
-                    <a href="servicios/mudanzas.html">
-                        <img src="images/mudarseCasa.png" width="125px" height="125px">
-                    </a>
-                    <h3>Mudanzas</h3>
-                </article>
-                <article>
-                    <a href="servicios/fumigacion.html">
-                        <img src="images/exterminador.png" width="125px" height="125px">
-                    </a>
-                    <h3>Fumigación</h3>
-                </article>
-                <article>
-                    <a href="servicios/piletero.html">
-                        <img src="images/piscina.png" width="125px" height="125px">
-                    </a>
-                    <h3>Piletero</h3>
-                </article>
-                <article>
-                    <a href="servicios/pintor.html">
-                        <img src="images/pintorCasco.png" width="125px" height="125px">
-                    </a>
-                    <h3>Pintor</h3>
-                </article>
-                <article>
-                    <a href="servicios/techista.html">
-                        <img src="images/casaRota.png" width="125px" height="125px">
-                    </a>
-                    <h3>Techista</h3>
-                </article>
+            <section class="categorias" id="items">
+                
             </section>
         </div>
         <div class="row">
@@ -141,5 +70,17 @@
             </footer>
         </div>
     </div>
+
+
+    <template id="template-servicio">
+        <article>
+            <a href="">
+                <img src="" width="125px" height="125px">
+            </a>
+            <h3>servicio</h3>
+        </article>
+    </template>
+
+    <script src="main.js"></script>
 </body>
 </html>

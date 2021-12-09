@@ -1,5 +1,5 @@
 //Clase usuario con su constructor y metodos
-/*class Usuario{
+class Usuario{
     constructor(nombre, usuario, contraseña){
         this.nombre = nombre;
         this.usuario = usuario;
@@ -9,21 +9,27 @@
     saludar (){
         alert ("Bienvenido " + this.nombre + " ( usuario: " + this.usuario + " ) ");
     }
-}*/
+}
 //Clase de servicio con su constructor y metodos
-/*class Servicio{
-    constructor (id,tipo, importe){
+class Servicio{
+    constructor (id, tipo, importe , shortDesc, image, href){
         this.id = id;
         this.tipo = tipo;
         this.importe = importe;
+        this.shortDesc = shortDesc;
+        this.image = image;
+        this.href = href;
     }
 
-    agregarServicio(id, tipo, importe){
+    agregarServicio(id, tipo, importe, shortDesc, image, href){
         this.id = id;
         this.tipo= tipo;
         this.importe = importe
+        this.shortDesc = shortDesc;
+        this.image = image;
+        this.href = href;
     }
-}*/
+}
 
 //Clase carrito con su constructor y sus metodos
 class Carrito{
@@ -33,9 +39,35 @@ class Carrito{
     }
     sumar (a , b) {
         this.importeTotal = a + b;
-        //importeCarrito.value = this.importeTotal;
     }
 }
+
+//variables de sesion
+
+const servicios = [
+    { id : 0, mnemonic : "ELECTRICIDAD", precio: 2500, shortDesc: "Electricidad", image: "images/electrico.png", href:"servicios/electricidad.html"},
+    { id : 1, mnemonic : "PLOMERIA", precio: 2800, shortDesc: "Plomeria", image: "images/plomeria.png", href:"servicios/plomeria.html"},
+    { id : 2, mnemonic : "CERRAJERIA", precio: 3500, shortDesc: "Cerrajeria", image: "images/llaves.png", href:"servicios/cerrajeria.html"},
+    { id : 3, mnemonic : "MUDANZA", precio: 35000, shortDesc: "Mudanza", image: "images/mudarseCasa.png", href:"servicios/mudanzas.html"},
+    { id : 4, mnemonic : "SERVICIO DE LIMPIEZA", precio: 4000, shortDesc: "Servicio de limpieza", image: "images/limpiezaCasa.png", href:"servicios/ServicioLimpieza.html"},
+    { id : 5, mnemonic : "FUMIGACION", precio: 2900, shortDesc: "Fumigacion", image: "images/exterminador.png", href:"servicios/fumigacion.html"},
+    { id : 6, mnemonic : "JARDINERIA", precio: 3250,shortDesc: "Jardineria", image: "images/jardineria.png", href:"servicios/jardineria.html" },
+    { id : 7, mnemonic : "PILETERO", precio: 4500, shortDesc: "Piletero", image: "images/piscina.png", href:"servicios/piletero.html"},
+    { id : 8, mnemonic : "PINTOR", precio: 6500, shortDesc: "Pintor", image: "images/pintorCasco.png", href:"servicios/pintor.html"},
+    { id : 9, mnemonic : "TECHISTA", precio: 15000, shortDesc: "Techista", image: "images/casaRota.png", href:"servicios/techista.html"},
+    
+]
+
+
+
+
+const listServicios= [];
+const carrito = new Carrito (0,0); //inicializamos un carrito de cero
+//Las siguientes 3 const son para la funcion pintarServicio()
+const items = document.getElementById("items");
+const templateServicio = document.getElementById("template-servicio").content;
+const fragment = document.createDocumentFragment();
+
 
 //Funciones
 /*function solicitarDatosUsuario (){
@@ -61,49 +93,30 @@ function traerServicio(id){
     }
 }
 
-/*function agregarServicioAlDOM (listServicios) {
-    let listaDOM = document.getElementById("listaServicios");
-    for (const servicio of listServicios) {
-        let elemento = document.createElement("li");
-        elemento.innerHTML = servicio.servicio;
-        listaDOM.appendChild(elemento)
-    }
-}*/
-
-/*function agregarAlDom(dato, element, padre){
+function agregarAlDom(dato, element, padre){
     let padre1 = document.getElementById(padre);
     let element1 = document.createElement(element);
     element1.innerHTML= dato
     padre1.appendChild(element1);
-}*/
+}
 
+const pintarServicio = data => {
+    data.forEach(element => {
+        templateServicio.querySelector('h3').textContent = element.shortDesc;
+        templateServicio.querySelector('a').setAttribute('href',element.href);
+        templateServicio.querySelector('a img').setAttribute('src',element.image);
 
-//variables de sesion
-
-const servicios = [
-    { id : 0, servicio : "ELECTRICIDAD", precio: 2500, },
-    { id : 1, servicio : "PLOMERIA", precio: 2800, },
-    { id : 2, servicio : "CERRAJERIA", precio: 3500, },
-    { id : 3, servicio : "MUDANZA", precio: 35000, },
-    { id : 4, servicio : "SERVICIO DE LIMPIEZA", precio: 4000, },
-    { id : 5, servicio : "FUMIGACION", precio: 2900, },
-    { id : 6, servicio : "JARDINERIA", precio: 3250, },
-    { id : 7, servicio : "PILETERO", precio: 4500, },
-    { id : 8, servicio : "PINTOR", precio: 6500, },
-    { id : 9, servicio : "TECHISTA", precio: 15000, },
-    
-]
-const listServicios= [];
-const carrito = new Carrito (0,0,0); //inicializamos un carrito de cero
-
+        const clone = templateServicio.cloneNode(true);
+        fragment.appendChild(clone)
+    });
+    items.appendChild(fragment);
+}
 
 //MAIN
 
 //Creamos el usuario con sus datos y mostramos mensaje de bienvenida
 //solicitarDatosUsuario();
 //agregarAlDom("Bienvenido " + sessionStorage.getItem("usuario"), "spam","user")
-//el usuario solicita un servicio
-
 
 function sumarAlCarrito(selection){
     servicio = selection;
@@ -113,7 +126,9 @@ function sumarAlCarrito(selection){
             servicioContratado = traerServicio(0);
             listServicios.push(servicioContratado);
             carrito.sumar(carrito.importeTotal, servicioContratado.precio);
-            alert("Se agrego al carrito el servicio de " + servicio + " Importe total del carrito: $ " + carrito.importeTotal );
+            alert("Se agrego al carrito el servicio de " + servicioContratado.shortDesc + " Importe total del carrito: $ " + carrito.importeTotal );
+            sessionStorage.setItem("carrito", JSON.stringify(carrito));
+            console.log(sessionStorage.getItem("carrito"));
             break;
         case "PLOMERIA" :
             servicioContratado = traerServicio(1);
@@ -173,7 +188,6 @@ function sumarAlCarrito(selection){
 }
 
 console.log("Carrito final: Importe: $ " + carrito.importeTotal + " Servicios contratados: " + listServicios.length );
-//agregarServicioAlDOM(listServicios);
 
 
 //Comentamos esta parte ya que son de otras entregas
@@ -190,3 +204,4 @@ console.log("Carrito final: Importe: $ " + carrito.importeTotal + " Servicios co
 //console.log("carrito ordenado");
 //console.log(serviciosImportes.sort(comparar));
 
+pintarServicio(servicios);

@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
     <!--header-->
@@ -51,63 +52,17 @@
         <div class="row">
             <section class="categoriasPedido">
                 <article>
-                    <h2>Electricidad</h2>
                     <img src="../images/electrico.png" width="125px" height="125px">
+                    <h2>Electricidad</h2>
                 </article>
             </section>
         </div>
 
-        <!--<div class="center">
-            <div class="subtitulo">
-                <h2>Solicita el servicio para tu hogar enviandonos un mail o a través de nuestro WhatsApp</h2> <a href="https://api.whatsapp.com/send?phone=541124069904" style="clear: left; float: left; margin-bottom: 1em;" target="_blank"><img border="0" data-original-height="59" data-original-width="59" src="https://1.bp.blogspot.com/-q3Dot9N2qac/XOQgr9etVpI/AAAAAAABT1M/6V4Bqaqr-6UQcl9Fy2_CaVgex0N_OYuQgCLcBGAs/s1600/whatsapp%2Bicono.png" style="width: 47px; height: 47px;"/></a>
-            </div>-->
-            <!--formulario contacto-->
-           <!-- <form class="formContacto">
-                <div class="row">
-                  <div class="col">
-                      <div class="flex">
-                        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
-                        <input type="text" class="form-control" placeholder="Ingresa tu nombre" id="nombre">
-                      </div>
-                  </div>
-                  <div class="col">
-                    <div class="flex">
-                        <label for="apellido" class="col-sm-2 col-form-label">Apellido </label>
-                        <input type="text" class="form-control" placeholder="Ingresa tu Apellido" id="apellido">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="flex">
-                          <label for="telefono" class="col-sm-2 col-form-label">Telefono </label>
-                          <input type="number" class="form-control" placeholder="Ingresa tu Teléfono">
-                        </div>
-                    </div>
-                    <div class="col">
-                      <div class="flex">
-                          <label for="email" class="col-sm-2 col-form-label">Mail </label>
-                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                      </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="flex">
-                            <label for="comentarios" class="col-sm-2 col-form-label">Comentarios </label>
-                            <textarea class="form-control" id="comentarios" style="height: 100px"></textarea>
-                        </div>
-                    </div>
-                    <div class="col">
-                    </div>
-                </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <button type="reset" class="btn btn-danger">Borrar</button>
-            </form>
-        </div> -->
-        
-        <div class="center">
-            <button id="btonElectricidad" class="btn btn-outline-dark" onclick="sumarAlCarrito('electricidad')">agregar al carrito</button>
+        <div class="row">
+            <section class="categorias" id="itemsElectro">
+                
+               
+            </section>
         </div>
 
     </div>
@@ -134,6 +89,7 @@
 
 
     <script src="../main.js"></script>
+    <script src="../js/js_subcategorias.js" ></script>
 
 </body>
 </html>

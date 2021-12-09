@@ -70,7 +70,11 @@ a {
   font-size: 25px; }
 
 #grilla {
-  grid-template-areas: "header header header" "titulo titulo titulo" "categorias categorias categorias" "novedades novedades novedades" "footer footer footer";
+  grid-template-areas: "header header header"
+ "titulo titulo titulo"
+ "categorias categorias categorias"
+ "novedades novedades novedades"
+ "footer footer footer";
   grid-template-rows: 170px 30px auto auto 75px; }
 
 header {
@@ -113,14 +117,20 @@ footer {
   margin-top: 20px; }
   .categorias h1 {
     text-align: center; }
+  .categorias h3{
+    font-size: 25px;
+  }
   .categorias article {
     display: inline-block;
     text-align: center;
     flex-basis: 300px;
-    margin: 10px;
+    margin: 20px;
     /* transition: all 1s;  */ }
+  .categorias article img{
+    margin: 10px;
+  }
   .categorias article:hover {
-    transform: scale(1.25); }
+    transform: scale(1.25); }  
 
 .subtitulo {
   display: inline-flex; }
