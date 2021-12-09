@@ -102,7 +102,7 @@ function agregarAlDom(dato, element, padre){
 
 const pintarServicio = data => {
     data.forEach(element => {
-        templateServicio.querySelector('h3').textContent = element.shortDesc;
+        templateServicio.querySelector('h2').textContent = element.shortDesc;
         templateServicio.querySelector('a').setAttribute('href',element.href);
         templateServicio.querySelector('a img').setAttribute('src',element.image);
 

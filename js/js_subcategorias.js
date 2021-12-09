@@ -42,8 +42,8 @@ const servicePool  = [
 ];
 
 const servicePainter  = [
-    { id : 0, mnemonic : "IMPERMEABILIZACION DE TECHOS - MEMBRANA LÍQUIDA", precio: 2500, shortDesc: "impermeabilizaciÓn de techos - membrana líquida" },
-    { id : 1, mnemonic : "PINTURA INTERIOR DE PAREDES Y CIELORRASO", precio: 2800, shortDesc: "pintura interior de paredes y cielorraso" },
+    { id : 0, mnemonic : "IMPERMEABILIZACION DE TECHOS - MEMBRANA LÍQUIDA", precio: 2500, shortDesc: "Impermeabilización de techos - membrana líquida" },
+    { id : 1, mnemonic : "PINTURA INTERIOR DE PAREDES Y CIELORRASO", precio: 2800, shortDesc: "Pintura interior de paredes y cielorraso" },
     { id : 2, mnemonic : "PINTURA DE REJAS", precio: 3500, shortDesc: "Pintura de rejas"},  
 ];
 
@@ -63,125 +63,27 @@ const serviceRoofer  = [
     { id : 1, mnemonic : "CAMBIO COMPLETO DE TECHO", precio: 2800, shortDesc: "Cambio completo de techo" },
 ];
 
-serviceElectric.forEach(service => {
-    $("#itemsElectro").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
+function agregarSubCategorias(services, items){
+    services.forEach(service => {
+        $("#" + items).append(`
+            <article>
+                <h3> ${service.shortDesc}</h3>
+                <p> $ ${service.precio}</p>
+                <div class="center">
+                    <button class="btn btn-outline-dark">Contratar</button>
+                </div>
+            </article>`);
+        
+    });
+}
 
-serviceLocksmith.forEach(service => {
-    $("#itemsCerrajeria").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-serviceFumigation.forEach(service => {
-    $("#itemsFumigacion").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-serviceGardening.forEach(service => {
-    $("#itemsJardineria").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-serviceMoving.forEach(service => {
-    $("#itemsMudanzas").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-servicePool.forEach(service => {
-    $("#itemsPiletero").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-servicePainter.forEach(service => {
-    $("#itemsPintor").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-servicePlumber.forEach(service => {
-    $("#itemsPlomeria").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-serviceCleaning.forEach(service => {
-    $("#itemsLimpiezaCasa").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-serviceRoofer.forEach(service => {
-    $("#itemsTechista").append(`
-        <article>
-            <h3> ${service.shortDesc}</h3>
-            <p> $ ${service.precio}</p>
-            <div class="center">
-                <button class="btn btn-outline-dark">Contratar</button>
-            </div>
-        </article>`);
-    
-});
-
-
-
+agregarSubCategorias(serviceElectric, "itemsElectro" );
+agregarSubCategorias(serviceLocksmith, "itemsCerrajeria" );
+agregarSubCategorias(serviceFumigation, "itemsFumigacion" );
+agregarSubCategorias(serviceGardening, "itemsJardineria" );
+agregarSubCategorias(serviceMoving, "itemsMudanzas" );
+agregarSubCategorias(servicePool, "itemsPiletero" );
+agregarSubCategorias(servicePainter, "itemsPintor" );
+agregarSubCategorias(servicePlumber, "itemsPlomeria" );
+agregarSubCategorias(serviceCleaning, "itemsLimpiezaCasa" );
+agregarSubCategorias(serviceRoofer, "itemsTechista" );
